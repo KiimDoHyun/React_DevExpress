@@ -4,4 +4,5 @@ export const URL = {
 	TreeList: "/treeList",
 	Scheduler: "/scheduler",
 	HtmlEditor: "/htmleditor",
+	HtmlEditor1: "/htmleditor",
 };
