@@ -1,7 +1,7 @@
 import React from "react";
 import DataGrid, {
 	Column,
-	Grouping,
+	// Grouping,
 	GroupPanel,
 	Pager,
 	Paging,

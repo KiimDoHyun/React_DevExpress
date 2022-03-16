@@ -53,6 +53,11 @@ const PivotGridComponent = (props) => {
 					setValue={setallowSortingBySummary}
 				/>
 				<InputCheck
+					name="allowFiltering"
+					value={allowFiltering}
+					setValue={setallowFiltering}
+				/>
+				<InputCheck
 					name="border 활성화"
 					value={showBorders}
 					setValue={setshowBorders}
@@ -89,7 +94,7 @@ const PivotGridComponent = (props) => {
 				id="pivotgrid"
 				dataSource={dataSource}
 				allowSortingBySummary={allowSortingBySummary} // 피봇 그리드를 필드 값 대신 요약된 값으로 정렬 할수 있게 하는 기능 ?
-				allowFiltering={true}
+				allowFiltering={allowFiltering}
 				showBorders={showBorders}
 				showColumnTotals={showColumnTotals}
 				showColumnGrandTotals={showColumnGrandTotals}
