@@ -12,10 +12,10 @@ const DataGridContainer = () => {
 	const [allowColumnReordering, setallowColumnReordering] = useState(true);
 	const [rowAlternationEnabled, setrowAlternationEnabled] = useState(true);
 	const [showBorders, setshowBorders] = useState(true);
+	const [allowColumnResizing, setallowColumnResizing] = useState(true);
 	const pageSizes = [10, 25, 50, 100];
 
 	const onContentReady = (e) => {
-		console.log(e);
 		if (!collapsed) {
 			e.component.expandRow(["EnviroCare"]);
 			setCollapsed(true);
@@ -32,19 +32,7 @@ const DataGridContainer = () => {
 				},
 			}),
 		});
-
-		// setOnContentReady((e) => {
-		// 	console.log(e);
-		// 	// if (!collapsed) {
-		// 	// 	e.component.expandRow(["EnviroCare"]);
-		// 	// 	setCollapsed(true);
-		// 	// }
-		// });
 	}, []);
-
-	useEffect(() => {
-		console.log(collapsed);
-	}, [collapsed]);
 
 	const propDatas = {
 		dataSourceOptions,
@@ -52,8 +40,13 @@ const DataGridContainer = () => {
 		rowAlternationEnabled,
 		showBorders,
 		pageSizes,
+		allowColumnResizing,
 
+		setallowColumnResizing,
+		setallowColumnReordering,
+		setrowAlternationEnabled,
 		onContentReady,
+		setshowBorders,
 	};
 	return (
 		<>

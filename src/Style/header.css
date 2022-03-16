@@ -1,0 +1,11 @@
+.header_ul {
+	display: flex;
+	list-style: none;
+}
+
+.header_ul li {
+	margin: 0 5px;
+}
+.header_ul li a {
+	text-decoration: none;
+}
