@@ -3,4 +3,5 @@ export const URL = {
 	PivotGrid: "/pivotgrid",
 	TreeList: "/treeList",
 	Scheduler: "/scheduler",
+	HtmlEditor: "/htmleditor",
 };
