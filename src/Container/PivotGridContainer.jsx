@@ -88,6 +88,8 @@ const PivotGridContainer = () => {
 	const [showColumnGrandTotals, setshowColumnGrandTotals] = useState(true);
 	const [showRowTotals, setshowRowTotals] = useState(true);
 	const [showRowGrandTotals, setshowRowGrandTotals] = useState(true);
+	const [fieldChooser, setfieldChooser] = useState(true);
+	const [tooltip, setTooltip] = useState(true);
 
 	useEffect(() => {
 		pivotGridRef.current["_instance"].bindChart(chartRef.current["_instance"], {
@@ -104,26 +106,25 @@ const PivotGridContainer = () => {
 		dataSource,
 		chartRef,
 		pivotGridRef,
+
 		allowSortingBySummary,
 		setallowSortingBySummary,
-
 		allowFiltering,
 		setallowFiltering,
-
 		showBorders,
 		setshowBorders,
-
 		showColumnTotals,
 		setshowColumnTotals,
-
 		showColumnGrandTotals,
 		setshowColumnGrandTotals,
-
 		showRowTotals,
 		setshowRowTotals,
-
 		showRowGrandTotals,
 		setshowRowGrandTotals,
+		fieldChooser,
+		setfieldChooser,
+		tooltip,
+		setTooltip,
 	};
 	return <PivotGridComponent {...propDatas} />;
 };

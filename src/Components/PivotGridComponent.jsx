@@ -17,21 +17,20 @@ const PivotGridComponent = (props) => {
 
 		allowFiltering,
 		setallowFiltering,
-
 		showBorders,
 		setshowBorders,
-
 		showColumnTotals,
 		setshowColumnTotals,
-
 		showColumnGrandTotals,
 		setshowColumnGrandTotals,
-
 		showRowTotals,
 		setshowRowTotals,
-
 		showRowGrandTotals,
 		setshowRowGrandTotals,
+		fieldChooser,
+		setfieldChooser,
+		tooltip,
+		setTooltip,
 	} = props;
 	function customizeTooltip(args) {
 		const valueText = currencyFormatter.format(args.originalValue);
@@ -45,7 +44,8 @@ const PivotGridComponent = (props) => {
 		minimumFractionDigits: 0,
 	});
 	return (
-		<div style={{ margin: "0 10px" }}>
+		<div className="Container">
+			<h3>PivotGrid</h3>
 			<div className="options">
 				<InputCheck
 					name="allowSortingBySummary"
@@ -58,7 +58,7 @@ const PivotGridComponent = (props) => {
 					setValue={setallowFiltering}
 				/>
 				<InputCheck
-					name="border 활성화"
+					name="showBorders"
 					value={showBorders}
 					setValue={setshowBorders}
 				/>
@@ -82,12 +82,19 @@ const PivotGridComponent = (props) => {
 					value={showRowGrandTotals}
 					setValue={setshowRowGrandTotals}
 				/>
+				<InputCheck
+					name="fieldChooser"
+					value={fieldChooser}
+					setValue={setfieldChooser}
+				/>
+				<InputCheck name="tooltip" value={tooltip} setValue={setTooltip} />
 			</div>
 			<Chart ref={chartRef}>
 				<Size height={200} />
-				<Tooltip enabled={true} customizeTooltip={customizeTooltip} />
+				<Tooltip enabled={tooltip} customizeTooltip={customizeTooltip} />
 				<CommonSeriesSettings type="bar" />
 				<AdaptiveLayout width={450} />
+				{/* 지정한 크기 (width) 보다 작으면 차크만 남고 나머진 숨김 */}
 			</Chart>
 
 			<PivotGrid
@@ -102,7 +109,7 @@ const PivotGridComponent = (props) => {
 				showRowGrandTotals={showRowGrandTotals}
 				ref={pivotGridRef}
 			>
-				<FieldChooser enabled={true} height={400} />
+				<FieldChooser enabled={fieldChooser} height={400} />
 			</PivotGrid>
 		</div>
 	);

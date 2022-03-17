@@ -17,6 +17,12 @@ const Header = () => {
 				<li>
 					<Link to={URL.PivotGrid}>PivotGrid</Link>
 				</li>
+				<li>
+					<Link to={URL.TreeList}>TreeList</Link>
+				</li>
+				<li>
+					<Link to={URL.Scheduler}>Scheduler</Link>
+				</li>
 			</ul>
 		</>
 	);

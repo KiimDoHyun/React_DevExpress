@@ -26,25 +26,26 @@ const DataGridComponent = (props) => {
 	} = props;
 
 	return (
-		<div className="DataGridComponent" style={{ margin: "0 10px" }}>
+		<div className="Container">
+			<h3>DataGrid</h3>
 			<div className="options">
 				<InputCheck
-					name="border 활성화"
+					name="showBorders"
 					value={showBorders}
 					setValue={setshowBorders}
 				/>
 				<InputCheck
-					name="Column 위치변경 활성화"
+					name="allowColumnReordering"
 					value={allowColumnReordering}
 					setValue={setallowColumnReordering}
 				/>
 				<InputCheck
-					name="row 생상구분 활성화"
+					name="rowAlternationEnabled"
 					value={rowAlternationEnabled}
 					setValue={setrowAlternationEnabled}
 				/>
 				<InputCheck
-					name="Column 넓이변경 활성화"
+					name="allowColumnResizing"
 					value={allowColumnResizing}
 					setValue={setallowColumnResizing}
 				/>
