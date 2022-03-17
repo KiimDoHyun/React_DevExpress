@@ -3,6 +3,7 @@ import Scheduler, { Resource } from "devextreme-react/scheduler";
 import DataCellContainer from "../Container/Scheduler/DataCellContainer";
 import ResourceCellContainer from "../Container/Scheduler/ResourceCellContainer";
 import "../Style/Scheduler.css";
+import InputCheck from "./InputCheck";
 
 const SchedulerComponent = (props) => {
 	const {
@@ -11,28 +12,18 @@ const SchedulerComponent = (props) => {
 		currentDate,
 		employees,
 		data,
-		currentViewType,
-		currentView,
-		onChangeCurrentView,
+		showAllDayPanel,
+		setshowAllDayPanel,
 	} = props;
 	return (
 		<div className="Container">
 			<h3>Scheduler</h3>
 			<div className="options">
-				<select
-					id="currentView"
-					value={currentView}
-					onChange={onChangeCurrentView}
-				>
-					{currentViewType.map((item, idx) => {
-						return (
-							<option key={idx} value={item}>
-								{item}
-							</option>
-						);
-					})}
-				</select>
-				<label htmlFor="currentView">currentView</label>
+				<InputCheck
+					name="showAllDayPanel"
+					value={showAllDayPanel}
+					setValue={setshowAllDayPanel}
+				/>
 			</div>
 			<Scheduler
 				timeZone="America/Los_Angeles"
@@ -41,11 +32,10 @@ const SchedulerComponent = (props) => {
 				// resourceCellComponent={ResourceCellContainer} // 상단에 추가정보 custom 가능
 				groups={groups}
 				views={views}
-				currentView={currentView}
-				// defaultCurrentView="month"
+				defaultCurrentView="month" // views 디폴트 설정
 				defaultCurrentDate={currentDate} // 기본 날짜 설정 가능 (현재 테스트 데이터를 보여주기 위한 임의의 날짜가 설정되어있음.)
 				height={600}
-				showAllDayPanel={true}
+				showAllDayPanel={showAllDayPanel}
 				firstDayOfWeek={1}
 				startDayHour={8}
 				endDayHour={18}

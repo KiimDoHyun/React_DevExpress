@@ -3,7 +3,8 @@ import SchedulerComponent from "../Components/SchedulerComponent";
 import { employees_scheduler as employees, data } from "../Data";
 
 const SchedulerContainer = () => {
-	const currentViewType = [
+	const [groups, setGroups] = useState(["employeeID"]);
+	const [views, setViews] = useState([
 		"agenda",
 		"day",
 		"month",
@@ -13,20 +14,9 @@ const SchedulerContainer = () => {
 		"timelineWorkWeek",
 		"week",
 		"workWeek",
-	];
-
-	const [groups, setGroups] = useState(["employeeID"]);
-	const [views, setViews] = useState(["month"]);
+	]);
 	const [currentDate, setCurrentDate] = useState(new Date(2021, 5, 2, 11, 30));
-
-	const [currentView, setCurrentView] = useState("month");
-
-	const onChangeCurrentView = (e) => {
-		const {
-			target: { value },
-		} = e;
-		setCurrentView(value);
-	};
+	const [showAllDayPanel, setshowAllDayPanel] = useState(true);
 
 	const propDatas = {
 		groups,
@@ -34,9 +24,8 @@ const SchedulerContainer = () => {
 		currentDate,
 		employees,
 		data,
-		currentViewType,
-		currentView,
-		onChangeCurrentView,
+		showAllDayPanel,
+		setshowAllDayPanel,
 	};
 
 	return <SchedulerComponent {...propDatas} />;
