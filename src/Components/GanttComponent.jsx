@@ -36,7 +36,6 @@ const GanttComponent = (props) => {
 						);
 					})}
 				</select>
-				<input ari />
 			</div>
 			<Gantt taskListWidth={500} scaleType={scaleType} height={700} ref={reff}>
 				<Tasks dataSource={Gtttasks} />

@@ -12,6 +12,8 @@ import SchedulerPage from "./Page/SchedulerPage";
 import HtmlEditorPage from "./Page/HtmlEditorPage";
 import DiagramPage from "./Page/DiagramPage";
 import GanttPage from "./Page/GanttPage";
+import GaugesPage from "./Page/GaugesPage";
+import NavigationPage from "./Page/NavigationPage";
 
 function App() {
 	return (
@@ -25,6 +27,8 @@ function App() {
 				<Route element={<HtmlEditorPage />} path={URL.HtmlEditor} />
 				<Route element={<DiagramPage />} path={URL.Diagram} />
 				<Route element={<GanttPage />} path={URL.Gantt} />
+				<Route element={<GaugesPage />} path={URL.Gauges} />
+				<Route element={<NavigationPage />} path={URL.Navigation} />
 			</Routes>
 		</BrowserRouter>
 	);
