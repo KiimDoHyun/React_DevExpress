@@ -1,6 +1,7 @@
 import "./App.css";
 import "devextreme/dist/css/dx.light.css";
 import "devexpress-diagram/dist/dx-diagram.css";
+import "devexpress-gantt/dist/dx-gantt.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DataGridPage from "./Page/DataGridPage";
 import HeaderContainer from "./Container/HeaderContainer";
