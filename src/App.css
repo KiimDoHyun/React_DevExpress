@@ -35,6 +35,18 @@
 	justify-content: flex-start;
 	gap: 20px;
 	flex-wrap: wrap;
+	padding: 20px;
+	background-color: rgba(191, 191, 191, 0.15);
+	margin-bottom: 20px;
+}
+
+.caption {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.option {
+	margin-top: 10px;
 }
 
 .Container {

@@ -7,6 +7,8 @@ import { URL } from "./Data";
 import PivotGridPage from "./Page/PivotGridPage";
 import TreeListPage from "./Page/TreeListPage";
 import SchedulerPage from "./Page/SchedulerPage";
+import HtmlEditorPage from "./Page/HtmlEditorPage";
+import DiagramPage from "./Page/DiagramPage";
 
 function App() {
 	return (
@@ -17,6 +19,8 @@ function App() {
 				<Route element={<PivotGridPage />} path={URL.PivotGrid} />
 				<Route element={<TreeListPage />} path={URL.TreeList} />
 				<Route element={<SchedulerPage />} path={URL.Scheduler} />
+				<Route element={<HtmlEditorPage />} path={URL.HtmlEditor} />
+				<Route element={<DiagramPage />} path={URL.Diagram} />
 			</Routes>
 		</BrowserRouter>
 	);

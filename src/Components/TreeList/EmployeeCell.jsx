@@ -4,17 +4,17 @@ const EmployeeCell = (options) => {
 	const employee = options.data.Task_Assigned_Employee;
 
 	if (!employee) {
-		return <span className="name">not assigned</span>;
+		return <span className="TLname">not assigned</span>;
 	}
 
 	return (
 		<>
 			<div
-				className="img"
+				className="TLimg"
 				style={{ backgroundImage: `url(${employee.Picture})` }}
 			/>
 			&nbsp;
-			<span className="name">{employee.Name}</span>
+			<span className="TLname">{employee.Name}</span>
 		</>
 	);
 };

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { URL } from "../Data";
 import "../Style/header.css";
 
-const Header = () => {
+const Header = (props) => {
+	const { name, router } = props;
+
 	return (
 		<>
 			<ul className="header_ul">
@@ -11,18 +12,17 @@ const Header = () => {
 				<li>
 					<Link to={"/"}>Home</Link>
 				</li>
-				<li>
-					<Link to={URL.DataGrid}>DataGrid</Link>
-				</li>
-				<li>
-					<Link to={URL.PivotGrid}>PivotGrid</Link>
-				</li>
-				<li>
-					<Link to={URL.TreeList}>TreeList</Link>
-				</li>
-				<li>
-					<Link to={URL.Scheduler}>Scheduler</Link>
-				</li>
+				{name.length > 0 && router.length > 0 ? (
+					<>
+						{name.map((item, idx) => {
+							return (
+								<li key={idx}>
+									<Link to={router[idx]}>{item}</Link>
+								</li>
+							);
+						})}
+					</>
+				) : null}
 			</ul>
 		</>
 	);

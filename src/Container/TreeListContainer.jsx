@@ -36,6 +36,10 @@ const TreeListContainer = () => {
 		}
 	}, [tasks, employees]);
 
+	useEffect(() => {
+		console.log("dataSourceOptions", dataSourceOptions);
+	}, [dataSourceOptions]);
+
 	/*
     데이터 예시
     > 트리 구조를 결정하는 것만 체크

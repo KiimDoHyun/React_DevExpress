@@ -10,6 +10,7 @@ import TreeList, {
 import EmployeeCell from "./TreeList/EmployeeCell";
 import { Template } from "devextreme-react/core/template";
 import InputCheck from "./InputCheck";
+import "../Style/TreeList.css";
 
 const TreeListComponent = (props) => {
 	function customizeTaskCompletionText(cellInfo) {
@@ -89,7 +90,7 @@ const TreeListComponent = (props) => {
 					caption="Assigned"
 					allowSorting={true}
 					minWidth={200}
-					cellTemplate="employeeTemplate"
+					cellTemplate="employeeTemplate" // <Template name="employeeTemplate" render={EmployeeCell} /> 컴포넌트의 name 과 동일하면 이 컴포넌트로 렌더링
 				>
 					<Lookup dataSource={employees} displayExpr="Name" valueExpr="ID" />
 				</Column>
