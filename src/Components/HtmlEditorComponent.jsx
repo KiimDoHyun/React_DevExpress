@@ -15,7 +15,7 @@ const HtmlEditorComponent = (props) => {
 		markup,
 	} = props;
 	return (
-		<div>
+		<div className="Container">
 			<h3>HtmlEditor</h3>
 			<div className="options">
 				<InputCheck

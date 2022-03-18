@@ -10,6 +10,7 @@ import TreeListPage from "./Page/TreeListPage";
 import SchedulerPage from "./Page/SchedulerPage";
 import HtmlEditorPage from "./Page/HtmlEditorPage";
 import DiagramPage from "./Page/DiagramPage";
+import GanttPage from "./Page/GanttPage";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 				<Route element={<SchedulerPage />} path={URL.Scheduler} />
 				<Route element={<HtmlEditorPage />} path={URL.HtmlEditor} />
 				<Route element={<DiagramPage />} path={URL.Diagram} />
+				<Route element={<GanttPage />} path={URL.Gantt} />
 			</Routes>
 		</BrowserRouter>
 	);
