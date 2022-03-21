@@ -1,11 +1,8 @@
 import React from "react";
+import EditorsContainer from "../Container/EditorsContainer";
 
-const Editors = () => {
-	return (
-		<>
-			<div></div>
-		</>
-	);
+const EditorsPage = () => {
+	return <EditorsContainer />;
 };
 
-export default Editors;
+export default EditorsPage;

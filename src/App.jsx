@@ -14,21 +14,32 @@ import DiagramPage from "./Page/DiagramPage";
 import GanttPage from "./Page/GanttPage";
 import GaugesPage from "./Page/GaugesPage";
 import NavigationPage from "./Page/NavigationPage";
+import ChartsPage from "./Page/ChartsPage";
+import EditorsPage from "./Page/EditorsPage";
+import HomePage from "./Page/HomePage";
+import FormsandMulit_purposePage from "./Page/FormsandMulit_purposePage";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<HeaderContainer />
 			<Routes>
+				<Route element={<HomePage />} path={"/"} />
 				<Route element={<DataGridPage />} path={URL.DataGrid} />
 				<Route element={<PivotGridPage />} path={URL.PivotGrid} />
 				<Route element={<TreeListPage />} path={URL.TreeList} />
 				<Route element={<SchedulerPage />} path={URL.Scheduler} />
 				<Route element={<HtmlEditorPage />} path={URL.HtmlEditor} />
 				<Route element={<DiagramPage />} path={URL.Diagram} />
+				<Route element={<ChartsPage />} path={URL.Chart} />
 				<Route element={<GanttPage />} path={URL.Gantt} />
 				<Route element={<GaugesPage />} path={URL.Gauges} />
 				<Route element={<NavigationPage />} path={URL.Navigation} />
+				<Route element={<EditorsPage />} path={URL.Editors} />
+				<Route
+					element={<FormsandMulit_purposePage />}
+					path={URL.FormsandMulit_purpose}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

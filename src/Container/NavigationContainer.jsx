@@ -20,6 +20,8 @@ const NavigationContainer = () => {
 		}
 	};
 
+	const test = [];
+
 	/*
     [
         {
