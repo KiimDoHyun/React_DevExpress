@@ -41,7 +41,7 @@ const FormsandMulit_purposeContainer = () => {
 
 	// 데이터 확인
 	const onsubmit = () => {
-		console.log("데이터: ", formData);
+		alert("데이터: ", formData);
 	};
 
 	const propDatas = {

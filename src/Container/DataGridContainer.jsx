@@ -7,8 +7,6 @@ const DataGridContainer = () => {
 	const [collapsed, setCollapsed] = useState(false);
 	// const [onContentReady, setOnContentReady] = useState(null);
 
-	// 옵션
-
 	const [allowColumnReordering, setallowColumnReordering] = useState(true);
 	const [rowAlternationEnabled, setrowAlternationEnabled] = useState(true);
 	const [showBorders, setshowBorders] = useState(true);

@@ -1,0 +1,14 @@
+.photo-popup-content {
+	text-align: center !important;
+}
+
+.photo-popup-content .photo-popup-image {
+	height: 100%;
+	max-width: 100%;
+}
+
+/*
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+*/

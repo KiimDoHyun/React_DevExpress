@@ -18,6 +18,10 @@ import ChartsPage from "./Page/ChartsPage";
 import EditorsPage from "./Page/EditorsPage";
 import HomePage from "./Page/HomePage";
 import FormsandMulit_purposePage from "./Page/FormsandMulit_purposePage";
+import FilemanagementPage from "./Page/FilemanagementPage";
+import ActionsAndListsPage from "./Page/ActionsAndListsPage";
+import MapsPage from "./Page/MapsPage";
+import DialogsAndNotificationsPage from "./Page/DialogsAndNotificationsPage";
 
 function App() {
 	return (
@@ -39,6 +43,13 @@ function App() {
 				<Route
 					element={<FormsandMulit_purposePage />}
 					path={URL.FormsandMulit_purpose}
+				/>
+				<Route element={<FilemanagementPage />} path={URL.FileManageMent} />
+				<Route element={<ActionsAndListsPage />} path={URL.ActionsAndList} />
+				<Route element={<MapsPage />} path={URL.Maps} />
+				<Route
+					element={<DialogsAndNotificationsPage />}
+					path={URL.DialogsAndNotifications}
 				/>
 			</Routes>
 		</BrowserRouter>
