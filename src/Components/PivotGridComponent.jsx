@@ -94,7 +94,7 @@ const PivotGridComponent = (props) => {
 				<Tooltip enabled={tooltip} customizeTooltip={customizeTooltip} />
 				<CommonSeriesSettings type="bar" />
 				<AdaptiveLayout width={450} />
-				{/* 지정한 크기 (width) 보다 작으면 차크만 남고 나머진 숨김 */}
+				{/* 지정한 크기 (width) 보다 작으면 차트만 남고 나머진 숨김 */}
 			</Chart>
 
 			<PivotGrid

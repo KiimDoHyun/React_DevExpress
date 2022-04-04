@@ -1,7 +1,7 @@
 import React from "react";
 import DataGrid, {
 	Column,
-	// Grouping,
+	Grouping,
 	GroupPanel,
 	Pager,
 	Paging,
@@ -24,6 +24,34 @@ const DataGridComponent = (props) => {
 		onContentReady,
 		setshowBorders,
 	} = props;
+
+	const ttt = [
+		{
+			data1: '1',
+			data2: 2,
+			data3: "3"
+		},
+		{
+			data1: '1',
+			data2: 2,
+			data3: "3"
+		},
+		{
+			data1: '1',
+			data2: 2,
+			data3: "3"
+		},
+		{
+			data1: '1',
+			data2: 2,
+			data3: "3"
+		},
+		{
+			data1: '1',
+			data2: 2,
+			data3: "3"
+		},
+	]
 
 	return (
 		<div className="Container">
@@ -64,8 +92,22 @@ const DataGridComponent = (props) => {
 					emptyPanelText="정렬할 행을 드래그하세요"
 					allowColumnDragging={true}
 				/>
+				        {/* <Column dataField="Product" groupIndex={0} /> */}
+
 				{/* 검색 */}
-				<SearchPanel visible={true} highlightCaseSensitive={true} width={300} />
+				<SearchPanel visible={true} highlightSearchText={true} highlightCaseSensitive={false} width={300} />
+				<Grouping autoExpandAll={false} />
+
+				{/* groupIndex 옵션이 할당되면 자동으로 해당 column 으로 정렬되어버림 */}
+				<Column dataField="Product" groupIndex={0} />
+
+				<Column
+					dataField="Amount"
+					caption="Sale Amount"
+					dataType="number"
+					format="currency"
+					alignment="right"
+				/>
 				<Column
 					dataField="Discount"
 					caption="Discount %"
@@ -84,15 +126,16 @@ const DataGridComponent = (props) => {
                 width: 넓이
                 */}
 				<Column dataField="SaleDate" dataType="date" />
-				<Column dataField="Product" />
 				<Column dataField="Region" dataType="string" />
-				<Column dataField="Customer" dataType="string" />
+				<Column dataField="Sector" dataType="string" />
+				<Column dataField="Channel" dataType="string" />
+				<Column dataField="Customer" dataType="string" width={150} />
 
 				{/* 한번에 보여줄 데이터 개수 조정(배열로 개수 저장, 가변) */}
-				<Pager allowedPageSizes={pageSizes} showPageSizeSelector={true} />
+				<Pager allowedPageSizes={pageSizes} showPageSizeSelector={true}/>
 
 				{/* 한번에 보여줄 데이터 개수 (초기에 설정) */}
-				<Paging defaultPageSize={10} />
+				<Paging defaultPageSize={12} />
 			</DataGrid>
 		</div>
 	);
