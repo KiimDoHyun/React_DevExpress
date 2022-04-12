@@ -55,6 +55,7 @@ const ChartsComponent = (props) => {
 				dataSource={dataArray}
 				palette={palette}
 				id="chart"
+				// rotated={false}
 			>
 				<CommonSeriesSettings argumentField="complaint" />
 				<Series

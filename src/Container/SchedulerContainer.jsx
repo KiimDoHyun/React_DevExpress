@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SchedulerComponent from "../Components/SchedulerComponent";
 import { employees_scheduler as employees, data } from "../Data";
 
@@ -16,14 +16,19 @@ const SchedulerContainer = () => {
 		"workWeek",
 	]);
 	const [currentDate, setCurrentDate] = useState(new Date(2021, 5, 2, 11, 30));
-	const [showAllDayPanel, setshowAllDayPanel] = useState(true);
+	const [showAllDayPanel, setshowAllDayPanel] = useState(false);
+	const [checkData, setData] = useState(data);
+
+	useEffect(() => {
+		console.log('data', data);
+	}, [])
 
 	const propDatas = {
 		groups,
 		views,
 		currentDate,
 		employees,
-		data,
+		data: checkData,
 		showAllDayPanel,
 		setshowAllDayPanel,
 	};

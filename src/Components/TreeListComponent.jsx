@@ -101,13 +101,13 @@ const TreeListComponent = (props) => {
 					<Lookup dataSource={priorities} valueExpr="id" displayExpr="value" />
 				</Column>
 
-				{/* 왜 얘만 text-align 이 right 인지????? */}
 				<Column
 					dataField="Task_Completion"
 					caption="% Completed"
 					minWidth={100}
 					customizeText={customizeTaskCompletionText}
 					visible={true}
+					alignment={'left'}
 				/>
 
 				<Column

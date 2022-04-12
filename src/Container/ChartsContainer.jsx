@@ -43,7 +43,24 @@ const ChartsContainer = () => {
 
 	const customizeTooltip = (pointInfo) => {
 		return {
-			html: `<div><div class="tooltip-header">${pointInfo.argumentText}</div><div class="tooltip-body"><div class="series-name"><span class='top-series-name'>${pointInfo.points[0].seriesName}</span>: </div><div class="value-text"><span class='top-series-value'>${pointInfo.points[0].valueText}</span></div><div class="series-name"><span class='bottom-series-name'>${pointInfo.points[1].seriesName}</span>: </div><div class="value-text"><span class='bottom-series-value'>${pointInfo.points[1].valueText}</span>% </div></div></div>`,
+			html: `
+			<div>
+				<div class="tooltip-header">${pointInfo.argumentText}</div>
+				<div class="tooltip-body">
+					<div class="series-name">
+						<span class='top-series-name'>${pointInfo.points[0].seriesName}</span>: 
+					</div>
+					<div class="value-text">
+						<span class='top-series-value'>${pointInfo.points[0].valueText}</span>
+					</div>
+					<div class="series-name">
+						<span class='bottom-series-name'>${pointInfo.points[1].seriesName}</span>: 
+					</div>
+					<div class="value-text">
+						<span class='bottom-series-value'>${pointInfo.points[1].valueText}</span>% 
+					</div>
+				</div>
+			</div>`,
 		};
 	};
 
@@ -52,7 +69,7 @@ const ChartsContainer = () => {
     리턴값이 0 보다 작으면 a가 b보다 앞에 온다.
     리턴값이 0 보다 크면 a가 b보다 뒤에 온다.
     리턴값이 0 이면 순서를 변경하지 않는다.
-    원본 배열이 변경된다.
+    *원본 배열이 변경된다.
     */
 
 	const data = complaintsData.sort((a, b) => b.count - a.count);

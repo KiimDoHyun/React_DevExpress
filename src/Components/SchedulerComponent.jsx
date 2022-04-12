@@ -28,7 +28,7 @@ const SchedulerComponent = (props) => {
 			<Scheduler
 				timeZone="America/Los_Angeles"
 				dataSource={data}
-				// dataCellComponent={DataCellContainer} // customComponent 가능
+				dataCellComponent={DataCellContainer} // customComponent 가능
 				// resourceCellComponent={ResourceCellContainer} // 상단에 추가정보 custom 가능
 				groups={groups}
 				views={views}
@@ -39,6 +39,8 @@ const SchedulerComponent = (props) => {
 				firstDayOfWeek={1}
 				startDayHour={8}
 				endDayHour={18}
+				onAppointmentUpdated={() => console.log('data updated', data)}
+				
 			>
 				<Resource
 					label="Employee"
