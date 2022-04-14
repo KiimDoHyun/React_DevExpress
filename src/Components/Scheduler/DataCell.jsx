@@ -2,7 +2,6 @@ import React from "react";
 
 const DataCell = (props) => {
 	const { dayClasses, employeeClasses, text } = props;
-	console.log("employeeClasses", employeeClasses);
 	return (
 		<>
 			{employeeClasses && dayClasses ? (

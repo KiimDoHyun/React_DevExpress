@@ -14,6 +14,7 @@ const SchedulerComponent = (props) => {
 		data,
 		showAllDayPanel,
 		setshowAllDayPanel,
+		onClick,
 	} = props;
 	return (
 		<div className="Container">
@@ -24,6 +25,7 @@ const SchedulerComponent = (props) => {
 					value={showAllDayPanel}
 					setValue={setshowAllDayPanel}
 				/>
+				<button onClick={onClick}>Get Data</button>
 			</div>
 			<Scheduler
 				timeZone="America/Los_Angeles"

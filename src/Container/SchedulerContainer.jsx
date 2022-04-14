@@ -19,10 +19,9 @@ const SchedulerContainer = () => {
 	const [showAllDayPanel, setshowAllDayPanel] = useState(false);
 	const [checkData, setData] = useState(data);
 
-	useEffect(() => {
-		console.log('data', data);
-	}, [])
-
+	const onClick = () => {
+		console.log('Scheduler data', data);
+	}
 	const propDatas = {
 		groups,
 		views,
@@ -31,6 +30,7 @@ const SchedulerContainer = () => {
 		data: checkData,
 		showAllDayPanel,
 		setshowAllDayPanel,
+		onClick,
 	};
 
 	return <SchedulerComponent {...propDatas} />;

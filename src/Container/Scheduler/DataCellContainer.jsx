@@ -31,10 +31,6 @@ const DataCellContainer = (props) => {
 		"dx-template-wrapper",
 	]);
 
-	useEffect(() => {
-		console.log("props", props);
-	}, []);
-
 	// useEffect(() => {
 	// 	console.log("dayClasses", dayClasses);
 	// 	console.log("employeeClasses", employeeClasses);
