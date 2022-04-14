@@ -26,7 +26,22 @@ const FilemanagementComponent = (props) => {
 		setUpload,
 		download,
 		setDownload,
+		onClick,
 	} = props;
+	const test = [
+		{
+            name: 'file1',
+            isDirectory: true,
+            // size: Number (크기값d isDirectory 가 false 인 경우에만 보임.)
+            items: [
+                // {
+                //     name: 
+                //     ...
+                // }
+            ]
+
+        }
+	]
 
 	return (
 		<div className="Container">
@@ -41,11 +56,13 @@ const FilemanagementComponent = (props) => {
 				<InputCheck name="upload" value={upload} setValue={setUpload} />
 				<InputCheck name="download" value={download} setValue={setDownload} />
 				{/* <input type={"file"} webkitdirectory={"true"} /> */}
+				<button onClick={onClick}>Get data</button>
 			</div>
 			<div>
 				<FileManager
 					// currentPath={"Documents"} // 초기에 defult 로 설정할 위치
 					fileSystemProvider={remoteProvider}
+					// fileSystemProvider={test}
 					onSelectedFileOpened={displayImagePopup}
 					onCurrentDirectoryChanged={onCurrentDirectoryChanged}
 				>

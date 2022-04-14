@@ -26,6 +26,11 @@ const EditorsComponent = (props) => {
 		selectBoxGroupe,
 		setselectBoxGroupe,
 		items,
+		applyValueModeArr,
+		applyValueMode,
+		onChangeApplyValueMode,
+		showSpinButtons, 
+		setshowSpinButtons,
 	} = props;
 	return (
 		<div className="Container">
@@ -36,6 +41,17 @@ const EditorsComponent = (props) => {
 					value={selectBoxGroupe}
 					setValue={setselectBoxGroupe}
 				/>
+				<InputCheck
+					name="showSpinButtons"
+					value={showSpinButtons}
+					setValue={setshowSpinButtons}
+				/>
+				<label>applyValueMode</label>
+				<SelectBox
+					value={applyValueMode}
+					onValueChanged={onChangeApplyValueMode}
+					items={applyValueModeArr}
+				/>
 			</div>
 			<React.Fragment>
 				<div className="settings">
@@ -43,13 +59,19 @@ const EditorsComponent = (props) => {
 						<div className="field">
 							<div className="label">Title</div>
 							<div className="value">
+								<form onSubmit={(e) => {
+									e.preventDefault();
+									console.log(e)
+								}}>
 								<TextBox
 									name="Title" // submit 시 name 접근 가능?
 									value={text}
 									onValueChanged={onChangeText}
 									maxLength={40}
-									valueChangeEvent="keyup"
+									valueChangeEvent="blur"
 								/>
+								<button></button>
+								</form>
 							</div>
 						</div>
 						<div className="field">
@@ -58,7 +80,7 @@ const EditorsComponent = (props) => {
 								<ColorBox
 									value={color}
 									onValueChanged={onChangeColor}
-									applyValueMode="instantly"
+									applyValueMode={applyValueMode}
 								/>
 							</div>
 						</div>
@@ -70,7 +92,7 @@ const EditorsComponent = (props) => {
 								<NumberBox
 									value={width}
 									onValueChanged={onChangeWidth}
-									showSpinButtons={true}
+									showSpinButtons={showSpinButtons}
 									max={700}
 									min={70}
 									format="#0px"
@@ -83,10 +105,11 @@ const EditorsComponent = (props) => {
 								<NumberBox
 									value={height}
 									onValueChanged={onChangeHeight}
-									showSpinButtons={true}
+									showSpinButtons={showSpinButtons}
 									max={700}
 									min={70}
-									format="#0px"
+									// format="#0px"
+									format="#0g"
 								/>
 							</div>
 						</div>
@@ -100,8 +123,8 @@ const EditorsComponent = (props) => {
 									onValueChanged={onChangeTransform}
 									items={items}
 									grouped={selectBoxGroupe}
-									displayExpr="name"
-									valueExpr="value"
+									// displayExpr="name"
+									// valueExpr="value"
 								/>
 							</div>
 						</div>

@@ -40,8 +40,9 @@ const FormsandMulit_purposeContainer = () => {
 	};
 
 	// 데이터 확인
-	const onsubmit = () => {
-		alert("데이터: ", formData);
+	const onsubmit = (e) => {
+		console.log('e: ', e)
+		console.log('formData: ', formData);
 	};
 
 	const propDatas = {

@@ -36,7 +36,7 @@ const MapsComponent = (props) => {
 					<Label dataField="name" enabled={true} />
 				</Layer>
 				<Tooltip enabled={true} contentRender={TooltipTemplateContainer} />
-				<Legend customizeText={customizeLegendText}>
+				<Legend customizeText={customizeLegendText} >
 					<Source layer="areas" grouping="color" />
 				</Legend>
 				<Title text="Nominal GDP">

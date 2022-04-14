@@ -25,12 +25,17 @@ const FilemanagementContainer = () => {
 	const [upload, setUpload] = useState(true);
 	const [download, setDownload] = useState(true);
 
+	const onClick = () => {
+		console.log(remoteProvider)
+		console.log(remoteProvider.getItems(1));
+	}
+
 	/*
     파일 데이터 형태 [
         {
             name: String
             isDirectory: Bool
-            size: Number (크기값ㅇㄴ isDirectory 가 false 인 경우에만 보임.)
+            size: Number (크기값은 isDirectory 가 false 인 경우에만 보임.)
             items: [
                 {
                     name: 
@@ -94,6 +99,7 @@ const FilemanagementContainer = () => {
 		setUpload,
 		download,
 		setDownload,
+		onClick,
 	};
 	return <FilemanagementComponent {...propDatas} />;
 };

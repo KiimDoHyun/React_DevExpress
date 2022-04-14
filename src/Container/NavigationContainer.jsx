@@ -3,9 +3,17 @@ import NavigationComponent from "../Components/NavigationComponent";
 import { continents } from "../Data";
 
 const NavigationContainer = () => {
-	const [countryData, setcountryData] = useState(continents[0].items[0]);
-	const [citiesData, setcitiesData] = useState(continents[0].items[0].cities);
+	const selectionModeArr = [
+		'single',
+		'multiple'
+	];
+	const [selectionMode, setselectionMode] = useState(selectionModeArr[0]);
+	const [selectByClick, setselectByClick] = useState(true);
 
+	const onChangeSeletionModeSelect = (e) => {
+		const { value } = e;
+		setselectionMode(value);
+	}
 	//
 	/*
     1. 클릭한 리스트의(객채의) 모든 값이 e 에 담긴다.
@@ -13,14 +21,8 @@ const NavigationContainer = () => {
     */
 	const handleTreeViewSelectionChange = (e) => {
 		console.log(e);
-		const countryData = e.itemData;
-		if (countryData.cities) {
-			setcountryData(e.itemData);
-			setcitiesData(countryData.cities);
-		}
+		console.log('clicked Item: ', e.itemData);
 	};
-
-	const test = [];
 
 	/*
     [
@@ -36,7 +38,16 @@ const NavigationContainer = () => {
         ...
     ]
     */
-	const propDatas = { continents, handleTreeViewSelectionChange };
+	const propDatas = { 
+		continents, 
+		handleTreeViewSelectionChange, 
+		selectByClick, 
+		setselectByClick,
+		selectionMode, 
+		setselectionMode,
+		selectionModeArr,
+		onChangeSeletionModeSelect
+	};
 	return <NavigationComponent {...propDatas} />;
 };
 

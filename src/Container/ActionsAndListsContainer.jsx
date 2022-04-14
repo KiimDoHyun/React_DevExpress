@@ -48,6 +48,7 @@ const ActionsAndListsContainer = () => {
 		// 값이 바뀔때 mode 가 single 인 경우만 함수가 작동하도록 변경.
 		if (currentSelectionMode === "single") {
 			const targetItem = e.addedItems[0];
+			console.log(targetItem)
 			setCurrentHotel(targetItem);
 			setSelectedItemKeys([targetItem.Id]);
 		}

@@ -63,6 +63,19 @@ const GaugesComponent = (props) => {
 						onValueChanged={onChangecontainerBackgroundColor}
 					/>
 				</div>
+					<LinearGauge value={25} id="fuel-gauge">
+						<LinearSize width={90} height={20} />
+						<LinearScale
+							startValue={0}
+							endValue={50}
+							tickInterval={25}
+							minorTickInterval={12.5}
+						>
+							<MinorTick visible={true} />
+							<Label visible={false} />
+						</LinearScale>
+						<LinearValueIndicator type={'rangeBar'} size={30} offset={10} color={color} />
+					</LinearGauge>
 			</div>
 			<div id="gauge-demo">
 				<div id="gauge-container">
@@ -96,7 +109,7 @@ const GaugesComponent = (props) => {
 							theme={theme}
 							containerBackgroundColor={containerBackgroundColor}
 						>
-							{/* 눈금 크기 설정 */}
+							{/* 원형 크기 설정 */}
 							<CircularSize width={260} />
 
 							{/* 눈금 간격 설정 */}
@@ -105,10 +118,13 @@ const GaugesComponent = (props) => {
 								endValue={200} //  종료
 								tickInterval={20} // 간격
 								minorTickInterval={10} // 작은 간격
-							/>
+							>
+								{/* <MinorTick visible={true}/>  */}
+							</CircularScale>
 
 							{/* 눈금 길이 설정 (시작, 종료 각으로 조절)*/}
 							<Geometry startAngle={225} endAngle={315} />
+							{/* <Geometry startAngle={0} endAngle={10} /> */}
 
 							{/* 바늘 설정 */}
 							{/* 바늘 분리형 */}
@@ -137,7 +153,7 @@ const GaugesComponent = (props) => {
 								<MinorTick visible={false} />
 								<Label visible={false} />
 							</LinearScale>
-							<LinearValueIndicator size={8} offset={7} color={color} />
+							<LinearValueIndicator size={10} offset={7} color={color} />
 						</LinearGauge>
 					</div>
 					&nbsp;

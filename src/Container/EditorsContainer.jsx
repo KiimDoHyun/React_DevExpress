@@ -39,6 +39,12 @@ const EditorsContainer = () => {
 		{ name: "-15 degrees", value: "rotate(-15deg)" },
 		{ name: "-30 degrees", value: "rotate(-30deg)" },
 	];
+
+	const applyValueModeArr = [
+		'useButtons',
+		'instantly'
+	]
+	const [applyValueMode, setapplyValueMode] = useState(applyValueModeArr[0]);
 	const [text, setText] = useState("UI Superhero");
 	const [width, setWidth] = useState(370);
 	const [height, setHeight] = useState(260);
@@ -47,7 +53,12 @@ const EditorsContainer = () => {
 	const [border, setBorder] = useState(false);
 	const [selectBoxGroupe, setselectBoxGroupe] = useState(true);
 	const [items, setItems] = useState(transformations);
+	const [showSpinButtons, setshowSpinButtons] = useState(true);
 
+	const onChangeApplyValueMode = (e) => {
+		const { value } = e;
+		setapplyValueMode(value);
+	}
 	const onChangeText = (e) => {
 		const { value } = e;
 		setText(value);
@@ -98,6 +109,11 @@ const EditorsContainer = () => {
 		selectBoxGroupe,
 		setselectBoxGroupe,
 		items,
+		applyValueModeArr,
+		applyValueMode,
+		onChangeApplyValueMode,
+		showSpinButtons, 
+		setshowSpinButtons,
 	};
 	return <EditorsComponent {...propDatas} />;
 };

@@ -24,8 +24,8 @@ const FormsandMulit_purposeComponent = (props) => {
 				onFieldDataChanged={onchange}
 				onEditorEnterKey={onEditorEnterKey}
 			>
-				<GroupItem cssClass="first-group" colCount={4}>
-					<SimpleItem render={avatarRender}></SimpleItem>
+				<GroupItem cssClass="first-group" colCount={4} >
+					<SimpleItem render={avatarRender} />
 					<GroupItem colSpan={3}>
 						<SimpleItem dataField="FirstName" />
 						<SimpleItem dataField="LastName" />
